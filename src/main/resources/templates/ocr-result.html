@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carefree Life's OCR Result</title>
+</head>
+<body>
+<h1>CarefreeLife's 울 엄마를 위한 OCR 결과</h1>
+<ul>
+  <li th:each="result : ${ocrResult}" th:text="${result}"></li>
+</ul>
+</body>
+</html>
