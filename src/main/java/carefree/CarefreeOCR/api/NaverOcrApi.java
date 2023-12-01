@@ -23,14 +23,6 @@ public class NaverOcrApi {
     @Value("${naver.service.url}")
     private String url;
 
-    /**
-     * 네이버 ocr api 호출한다
-     * @param {string} type 호출 메서드 타입
-     * @param {string} filePath 파일 경로
-     * @param {string} naver_secretKey 네이버 시크릿키 값
-     * @param {string} ext 확장자
-     * @returns {List} 추출 text list
-     */
     public List<String> callApi(String type, String filePath, String naver_secretKey, String ext) {
         String apiURL = url;
         String secretKey = naver_secretKey;
@@ -92,13 +84,8 @@ public class NaverOcrApi {
         }
         return parseData;
     }
-    /**
-     * writeMultiPart
-     * @param {OutputStream} out 데이터를 출력
-     * @param {string} jsonMessage 요청 params
-     * @param {File} file 요청 파일
-     * @param {String} boundary 경계
-     */
+
+
     private static void writeMultiPart(DataOutputStream out, String jsonMessage, File file, String boundary) throws
             IOException {
         StringBuilder sb = new StringBuilder();
@@ -133,11 +120,8 @@ public class NaverOcrApi {
         }
         out.flush();
     }
-    /**
-     * 데이터 가공
-     * @param {StringBuffer} response 응답값
-     * @returns {List} result text list
-     */
+
+    // Data 가공 (OCR 결과를 List<String> 형식으로 반환)
     private static List<String> jsonparse(StringBuffer response) throws org.json.simple.parser.ParseException {
         //json 파싱
         JSONParser jp = new JSONParser();

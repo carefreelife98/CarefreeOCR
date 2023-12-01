@@ -16,8 +16,6 @@ public class JsonUtils {
     /**
      * jsonObject --> map 으로 변경
      * JSONObject 에 JSONArray 없어야 햠.
-     * @param obj
-     * @return
      */
     public static Map<String, Object> getMapFromJSONObject(JSONObject obj) {
         if (ObjectUtils.isEmpty(obj)) {
@@ -36,7 +34,6 @@ public class JsonUtils {
     /**
      * json array 를 list map 으로 변경.
      *
-     * @paramjsonArray
      * @return 값이 있으면 list map, 없으면 list 빈 값 return
      */
     public static List<Map<String, Object>> getListMapFromJsonArray(JSONArray jsonArray) {
